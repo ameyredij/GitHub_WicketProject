@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<wicket:extend>
+	<body>
+		<form action="" wicket:id="TasksListForm">
+		
+			<div class="container" wicket:id="container">
+				 
+				<div>
+					<h2>
+						Project : <span wicket:id="projectName"></span>
+					</h2>
+					
+				</div>
+				<div>
+				 <h4> Total Tasks :
+					<span wicket:id="taskCount"></span>&ensp;&ensp;
+					Tasks completed :
+					<span wicket:id="completedCount"></span>&ensp;&ensp;
+					Tasks pending :
+					<span wicket:id="pendingCount"></span> </h4>
+				</div>
+				
+				
+				<div><a class="btn btn-primary" wicket:id="btnCreateToDoTask">Add Task</a> </div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Sr No</th>
+							<th>Task Name</th>
+							<th>Task Description</th>
+							<th>Owner</th>
+							<th>Priority</th>
+							<th>Created Date</th>
+							<th>Due Date</th>
+							<th>Status</th>
+							<th>Action</th>
+							<th>Mark Done</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="success" wicket:id="listView">
+							<td><span wicket:id="srNo"></span></td>
+							<td><span wicket:id="taskName"></span></td>
+							<td><span wicket:id="taskDesc"></span></td>
+							<td><span wicket:id="taskOwner"></span></td>
+							<td><span wicket:id="taskPriority"></span></td>
+							<td><span wicket:id="taskCreatedDate"></span></td>
+							<td><span wicket:id="taskDueDate"></span></td>
+							<td><span wicket:id="taskStatus"></span></td>
+							<td><a wicket:id="delete">delete</a></td>
+							<td><input type="checkbox" wicket:id="checkbox"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div wicket:id="nav"></div>
+			</div>
+			<div wicket:id="addTaskModelWindow"></div>
+		</form>
+	</body>
+</wicket:extend>
+</html>

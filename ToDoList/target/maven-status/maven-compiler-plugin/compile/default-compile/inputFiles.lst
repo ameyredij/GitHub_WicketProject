@@ -1,0 +1,15 @@
+E:\Project\ToDoList\src\main\java\com\equitativa\pages\CreateProject.java
+E:\Project\ToDoList\src\main\java\com\equitativa\model\ProjectModel.java
+E:\Project\ToDoList\src\main\java\com\equitativa\pages\HomePage.java
+E:\Project\ToDoList\src\main\java\com\equitativa\UserSession.java
+E:\Project\ToDoList\src\main\java\com\equitativa\dao\Transactional.java
+E:\Project\ToDoList\src\main\java\com\equitativa\hibernate\entity\ProjectTask.java
+E:\Project\ToDoList\src\main\java\com\equitativa\hibernate\util\HibernateUtil.java
+E:\Project\ToDoList\src\main\java\com\equitativa\model\TaskModel.java
+E:\Project\ToDoList\src\main\java\com\equitativa\WicketApplication.java
+E:\Project\ToDoList\src\main\java\com\equitativa\dao\impl\ProjectDaoImpl.java
+E:\Project\ToDoList\src\main\java\com\equitativa\hibernate\entity\Project.java
+E:\Project\ToDoList\src\main\java\com\equitativa\dao\ProjectDao.java
+E:\Project\ToDoList\src\main\java\com\equitativa\pages\ProjectList.java
+E:\Project\ToDoList\src\main\java\com\equitativa\pages\CreateTask.java
+E:\Project\ToDoList\src\main\java\com\equitativa\pages\TasksList.java

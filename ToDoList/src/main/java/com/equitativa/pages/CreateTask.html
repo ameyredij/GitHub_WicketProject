@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+ 
+  </script>
+<style type="text/css">
+.feedbackPanelERROR {
+	color: red;
+}
+
+</style>
+
+</head>
+<body>
+
+	<div class="container">
+		<form wicket:id="CreateTaskForm">
+
+			<div class="form-group">
+				<label wicket:id="feedbackpanel"></label>
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Task Name:</label> <input type="text"
+					class="form-control" id="taskName" wicket:id="taskName">
+			</div>
+			<div class="form-group">
+				<label for="comment">Task Description :</label>
+				<textarea class="form-control" rows="5" id="taskDesc"
+					wicket:id="taskDesc"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Priority:</label> <select class="form-control"
+					id="priority" wicket:id="priority"></select>
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Owner:</label> <input type="text"
+					class="form-control" id="taskOwner" wicket:id="taskOwner">
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Due Date:</label>
+				<div class="row">
+					<div class='col-sm-3'>
+						<div class="form-group">
+							<div class='input-group date'>
+								<input type="text" id='datepicker' class="form-control "
+									wicket:id="taskDueDate">
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<input class="btn btn-default" wicket:id="btnSubmit" name="btnSubmit"
+				type="submit" value="Submit" />
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Golden Real Estate</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+div.background {
+  background: url(/banner1.jpg) repeat;
+  border: 1px solid black;
+}
+ 
+div.transbox {
+  margin: 50px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60); 
+}
+ 
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="bi bi-house" wicket:id="logo"></span></a> 
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" wicket:id="btnHome"  ><a href="#">Home</a></li>
+       <li><button class="btn btn-danger navbar-btn"  ><a wicket:id="btnCreateToDoProject" style="color: #1b1c1d;" >Create New Project</a></button></li>
+      <li><a href="#" wicket:id="btnProjectView" >View Project</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+<!--       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li> -->
+    </ul>
+  </div>
+</nav>
+<div  wicket:id="addCustomerModelWindow" > </div>
+</header>
+
+<div class="background" wicket:id="informationBox">
+  <div class="transbox">
+  <h1 style="color: black;">Organize it all with TodoList</h1>
+   <h3 style="color: black;">Remote task management for today's workplace Plan, manage and track all your remote team's tasks in one flexible software. </h3>
+  </div>
+</div>
+
+</body>
+
+</html>
+<wicket:child/>

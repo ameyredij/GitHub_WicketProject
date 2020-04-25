@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<wicket:extend>
+<body>
+<form action="" wicket:id="ProjectListForm">
+<div class="container" wicket:id="container">
+  <h2>Project List</h2> 
+  <h4> Total Projects : <span  wicket:id="projectCount" > </span></h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Project name</th>
+        <th>project Desc</th>
+		<th>Add/View Tasks</th>
+		<th>Action</th>
+      </tr>
+    </thead>
+    <tbody>           
+      <tr class="success" wicket:id="listView">
+        <td ><span wicket:id="srNo"></span></td>
+        <td ><span wicket:id="projectName"></span></td>
+        <td ><span wicket:id="projectDesc"></span></td>
+		<td ><a wicket:id="view">view</a></td>
+		<td ><a wicket:id="delete">delete</a></td>
+      </tr> 
+    </tbody>
+  </table>
+    <div  wicket:id="nav" > </div>
+</div>
+</form>
+</body>
+</wicket:extend>
+</html>
