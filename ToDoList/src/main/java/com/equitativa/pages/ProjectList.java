@@ -41,7 +41,7 @@ public class ProjectList extends HomePage {
 			add(container);
 			container.setOutputMarkupId(true);
 			
-			String strQuery    =    " select id, PROJECT_DESC, PROJECT_NAME, CREATED_DATE from project order by id " ;
+			String strQuery    =    " select id, PROJECT_NAME ,PROJECT_DESC, CREATED_DATE from project order by id " ;
 			List lstProject =  projectDao.searchBySql(strQuery);
 			
 			for (Iterator iterator = lstProject.iterator(); iterator.hasNext();) {
