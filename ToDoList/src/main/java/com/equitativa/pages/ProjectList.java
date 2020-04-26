@@ -41,18 +41,22 @@ public class ProjectList extends HomePage {
 			add(container);
 			container.setOutputMarkupId(true);
 			
-			String strQuery    =    " select id, PROJECT_NAME ,PROJECT_DESC, CREATED_DATE from project order by id " ;
-			List lstProject =  projectDao.searchBySql(strQuery);
+			String strQuery    =    " select id, PROJECT_NAME, PROJECT_DESC, CREATED_DATE from project order by id " ;
 			
-			for (Iterator iterator = lstProject.iterator(); iterator.hasNext();) {
-				Object []obj = (Object[]) iterator.next();
-				lstProjectModel.add(new ProjectModel( (Integer) obj[0], obj[1]+"",obj[2]+""));
-				count++;
+			try {
+				List lstProject =  projectDao.searchBySql(strQuery);
+				
+				for (Iterator iterator = lstProject.iterator(); iterator.hasNext();) {
+					Object []obj = (Object[]) iterator.next();
+					lstProjectModel.add(new ProjectModel( (Integer) obj[0], obj[1]+"",obj[2]+""));
+					count++;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			
 			container.add(new Label("projectCount", new Model<Integer>(count)));
 
-			System.out.println("lstProjectModel "+lstProjectModel);
 
 			PageableListView  listView = new PageableListView("listView",lstProjectModel,5)
 			{
@@ -71,13 +75,11 @@ public class ProjectList extends HomePage {
 						@Override
 						public void onClick( AjaxRequestTarget target )
 						{
-							System.out.println("innnn delete");
 							Project Project=new Project();
 							Project.setId(model.getId());
 							Project.setProjectName(model.getProjectName());
 							Project.setProjectDesc(model.getProjectDesc());
 							projectDao.delete(Project);
-							System.out.println("innnn delete updated");
 							setResponsePage(new ProjectList());
 						}
 					} );
@@ -98,8 +100,6 @@ public class ProjectList extends HomePage {
 			
 			WebMarkupContainer informationBox = new WebMarkupContainer ("informationBox");
 			add(informationBox);
-			informationBox.setOutputMarkupId(true);
-			informationBox.setOutputMarkupPlaceholderTag(true);
 			informationBox.setVisible(false);
 			informationBox.add(new AttributeModifier("style", "display: none;"));
 

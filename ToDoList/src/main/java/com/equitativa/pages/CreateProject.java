@@ -68,14 +68,11 @@ public class CreateProject extends WebPage{
 				
 				protected void onSubmit(AjaxRequestTarget target) {
 
-					System.out.println("in submit");
 					super.onSubmit(target);
-					
 					Project project=new Project();
 					project.setProjectName(objModel.getProjectName());
 					project.setProjectDesc(objModel.getProjectDesc());
 					project.setCreatedOn(new Date());
-					System.out.println("in submit ");
 					customerHome.saveOrUpdate(project);
 					modalWindow.close(target);
 				}

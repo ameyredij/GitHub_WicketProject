@@ -99,7 +99,6 @@ public class TasksList extends HomePage {
 					int srNo=item.getIndex()+1;
 
 					item.add(new Label("srNo",srNo));
-					//					item.add(new Label("srNo",model.getId()));
 					item.add(new Label("taskName",model.getTaskName()));
 					item.add(new Label("taskDesc",model.getTaskDesc()));
 					item.add(new Label("taskOwner",model.getTaskOwner()));
@@ -192,7 +191,6 @@ public class TasksList extends HomePage {
 						startDate1 = dateFormat.parse(model.getTaskCreatedDate());
 
 					} catch (ParseException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					return startDate1;
@@ -204,7 +202,6 @@ public class TasksList extends HomePage {
 						dueDate = dateFormat.parse(model.getTaskDueDate());
 
 					} catch (ParseException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					return dueDate;
@@ -222,8 +219,6 @@ public class TasksList extends HomePage {
 			
 			WebMarkupContainer informationBox = new WebMarkupContainer ("informationBox");
 			add(informationBox);
-			informationBox.setOutputMarkupId(true);
-			informationBox.setOutputMarkupPlaceholderTag(true);
 			informationBox.setVisible(false);
 			informationBox.add(new AttributeModifier("style", "display: none;"));
 

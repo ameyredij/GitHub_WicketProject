@@ -100,7 +100,6 @@ public class CreateTask extends WebPage{
 						projectTask.setTaskOwner(objModel.getTaskOwner());
 						projectTask.setTaskPriority(objModel.getTaskPriority());
 						projectTask.setTaskCreatedDate(new Date());
-						
 						Date date = dateFormat.parse(objModel.getTaskDueDate());
 						projectTask.setTaskDueDate(date);
 						projectTask.setTaskStatus("Pending");
