@@ -114,17 +114,9 @@ public class TasksList extends HomePage {
 						@Override
 						public void onClick( AjaxRequestTarget target )
 						{
-							
-							ProjectTask projectTask=new ProjectTask();
-							projectTask.setId(model.getId());
-							projectTask.setProjectId(projectModel.getId());
-							projectTask.setTaskStatus("Completed");
-							projectTask.setTaskName(model.getTaskName());
-							projectTask.setTaskDesc(model.getTaskDesc());
-							projectTask.setTaskOwner(model.getTaskOwner());
-							projectTask.setTaskPriority(model.getTaskPriority());
-							projectTask.setTaskDueDate(parseDueDate(model));
-							projectTask.setTaskCreatedDate(parseStartDate(model));
+
+
+							ProjectTask projectTask = mapPojoToDTO(model);
 						
 							projectDao.delete(projectTask);
 							System.out.println("innnn delete updated");
@@ -138,16 +130,9 @@ public class TasksList extends HomePage {
 
 							@Override
 							protected void onUpdate(AjaxRequestTarget target) {
-								ProjectTask projectTask=new ProjectTask();
-								projectTask.setId(model.getId());
-								projectTask.setProjectId(projectModel.getId());
+								
+								ProjectTask projectTask = mapPojoToDTO(model);
 								projectTask.setTaskStatus("Pending");
-								projectTask.setTaskName(model.getTaskName());
-								projectTask.setTaskDesc(model.getTaskDesc());
-								projectTask.setTaskOwner(model.getTaskOwner());
-								projectTask.setTaskPriority(model.getTaskPriority());
-								projectTask.setTaskDueDate(parseDueDate(model));
-								projectTask.setTaskCreatedDate(parseStartDate(model));
 								
 								projectDao.saveOrUpdate(projectTask);
 								setResponsePage(new TasksList()); 
@@ -162,21 +147,14 @@ public class TasksList extends HomePage {
 							protected void onUpdate(AjaxRequestTarget target) {
 								System.out.println("innnn checkbox");
 								 
-								ProjectTask projectTask=new ProjectTask();
-								projectTask.setId(model.getId());
-								projectTask.setProjectId(projectModel.getId());
+								ProjectTask projectTask = mapPojoToDTO(model);
 								projectTask.setTaskStatus("Completed");
-								projectTask.setTaskName(model.getTaskName());
-								projectTask.setTaskDesc(model.getTaskDesc());
-								projectTask.setTaskOwner(model.getTaskOwner());
-								projectTask.setTaskPriority(model.getTaskPriority());
-								projectTask.setTaskDueDate(parseDueDate(model));
-								projectTask.setTaskCreatedDate(parseStartDate(model));
 							
 								projectDao.saveOrUpdate(projectTask);
 								System.out.println("innnn checkbox updated");
 								setResponsePage(new TasksList()); 
 							}
+
 						}; 
 						item.add( checkBox );
 					}
@@ -184,6 +162,19 @@ public class TasksList extends HomePage {
 				}
 				
  
+				private ProjectTask mapPojoToDTO(final TaskModel model) {
+					ProjectTask projectTask=new ProjectTask();
+					projectTask.setId(model.getId());
+					projectTask.setProjectId(projectModel.getId());
+					projectTask.setTaskStatus("Completed");
+					projectTask.setTaskName(model.getTaskName());
+					projectTask.setTaskDesc(model.getTaskDesc());
+					projectTask.setTaskOwner(model.getTaskOwner());
+					projectTask.setTaskPriority(model.getTaskPriority());
+					projectTask.setTaskDueDate(parseDueDate(model));
+					projectTask.setTaskCreatedDate(parseStartDate(model));
+					return projectTask;
+				}
 
 				private Date parseStartDate(final TaskModel model) {
 					Date startDate1 = null;
@@ -264,6 +255,8 @@ public class TasksList extends HomePage {
 			});
 			btnCreateToDoTask.setOutputMarkupId(true);
 			container.add(btnCreateToDoTask);
+			
+			
 		}
 	}
 }
